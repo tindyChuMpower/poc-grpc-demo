@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "rpc-demo/calculator/proto";
+
+message DecomposeRequest {
+  int64 number=1;
+}
+
+message DecomposeResponse {
+  int64 result=1;
+}

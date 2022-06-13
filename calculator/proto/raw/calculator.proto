@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "rpc-demo/calculator/proto";
+
+import "sum.proto";
+import "decompose.proto";
+import "average.proto";
+
+service CalculatorService {
+  rpc Sum(SumRequest) returns (SumResponse);
+  rpc Decompose(DecomposeRequest) returns (stream DecomposeResponse);
+  rpc Average(stream AverageRequest) returns (AverageResponse);
+}
